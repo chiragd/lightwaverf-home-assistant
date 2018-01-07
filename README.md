@@ -9,4 +9,16 @@ This code may show your devices in the Home Assistant UI, but it may not be able
 Secondly, and most importantly your device running home assistant (in my case a raspberry pi) needs to be "authorised" to send messages to the WiFi Link. This script does not handle this yet. If there's demand, I'll try to get this pairing / authorisation process into the HASS UI, so it's easy for everyone.
 
 ## Installation
-Take the file and drop it in with your home-assistant installation. Follow the instructions on the home-assistant website. If you need help, let me know.
+### Adding the Lightwave Component to Home Assistant
+The lightwave.py file needs to be placed in the installation directory of Home Assistant. For me this is something like ```/usr/local/share/lib/python3.4/homeassistant/component/lights/```  There are instructions to follow on the instructions on the home-assistant website. If you need help, let me know.
+
+### Adding LightwaveRF to your configuration file
+Now that the component is installed you will need to add the setup to you configuration file.
+
+```
+light:
+  - platform: lightwave
+   
+```
+
+I think you'll also need to add your devices here. I'll update this section when I'm next near my home-assistant.
