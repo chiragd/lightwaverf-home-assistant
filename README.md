@@ -12,7 +12,23 @@ Secondly, and most importantly, your device running home assistant (in my case a
 
 In the meantime, if you need help with the pairing part, let me know.
 
+If you feel like trying, open a terminal on the device running home assistant and run the following command.
+
+```
+echo -ne "100,\!F*p." | nc -u -w1 192.168.1.110 9760
+```
+
+This should then show a message on your WiFi Link asking you to pair the device. Push the button on the WiFi Link to accept this. Once done, you should be able to control your lights via Home Asssistant.
+
 ## Installation
+### Edit the Lightwave.Py file
+You'll see at the top of the file there are a list of rooms and devices. If you want to, edit this to match your lightwaverf app. In the app you'll see a list of rooms. They are in order. The first room is R1. The second is R2 and so on. If you tap into a room on the lightwave app, you'll see a list of devices in that room. Again, these are in order. The first is D1, the second is D2 and so on. This allows you to determine the identifier for each device.
+
+For example if the first room in my list is 'Kitchen' (R1) and within this room I have 3 light devices(D1), ceiling(D2), wall and cabinet (D3). Then my devices would be R1D1, R1D2, R1D3 respectively.
+
+Remember you don't need to edit the file. Just note that all of your switches may not show and also that the naming may be wrong if you do not.
+
+
 ### Adding the Lightwave Component to Home Assistant
 The lightwave.py file needs to be placed in the installation directory of Home Assistant. For me this is something like
 ```
