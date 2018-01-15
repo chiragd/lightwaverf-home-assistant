@@ -20,7 +20,7 @@ LIGHT_TEMPS = [240, 380]
 
 # Below are generic rooms, with sample lightwave device IDs e.g. R1D1.
 # At the moment we have to manually configure your LightWave Devices. If you need help getting the codes for your devices, let me know.
-# You could try my devices and see how they work. Basically R represents a switch. D represents a dimmer on the switch, as far as I can tell.
+# You could try my devices and see how they work. Basically R represents a room. D represents a device, as far as I can tell. Look at the readme file for more details.
 
 def setup_platform(hass, config, add_devices_callback, discovery_info=None):
     """ Find and return lightwave lights """
