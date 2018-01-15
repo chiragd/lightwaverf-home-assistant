@@ -121,7 +121,7 @@ class LRFLight(Light):
         self.send_command(msg)
         print("LIGHTWAVE: finished")
 
-        self.update_ha_state()
+        self.schedule_update_ha_state()
 
     def turn_off(self, **kwargs):
         """ Turn the device off. """ 
@@ -130,4 +130,4 @@ class LRFLight(Light):
         self.send_command(msg)
         print("LIGHTWAVE: finished")
         self._state = False
-        self.update_ha_state()
+        self.schedule_update_ha_state()
